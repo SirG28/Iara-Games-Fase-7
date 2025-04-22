@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar Conta - Iara Games</title>
+  <link rel="stylesheet" href="styles/cadastro.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+
+<main>
+  <div class="top-bar">
+    <a href="login.html" class="voltar-completo">
+      <i class="bi bi-arrow-left"></i>
+      <span>Voltar</span>
+    </a>
+  </div>
+
+  <header>
+    <img src="images/logo iara 5.png" alt="Iara Games" class="logo">
+  </header>
+
+  <section class="formulario">
+    <h1 id="titulo-cadastro">Criar Conta</h1>
+
+    <form action="#" method="post" aria-label="Formulário de criação de conta">
+      <!-- Dados Pessoais -->
+      <fieldset class="grupo-campos">
+        <div class="grupoinput">
+          <label for="nome">Nome Completo</label>
+          <input id="nome" type="text" name="nome" class="input-padrao" required>
+        </div>
+
+        <div class="grupoinput">
+          <label for="nomeExibicao">Nome de exibição</label>
+          <div class="input-info-container">
+            <input id="nomeExibicao" type="text" name="nomeExibicao" class="input-padrao" required />
+            <div class="tooltip-wrapper">
+              <img src="images/formulario/info-circle.svg" alt="Informações sobre o nome de exibição" class="info-icon" />
+              <span class="tooltip-text">
+                O seu nome de exibição deve ter entre 3 e 16 caracteres, e pode conter letras e números, além de traços, pontos, sublinhados e espaços não consecutivos.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grupoinput">
+          <label for="dataNascimento">Data de Nascimento</label>
+          <div class="input-date-container">
+            <input id="dataNascimento" type="date" name="dataNascimento" class="input-padrao" required>
+            <img src="images/formulario/calendar.svg" alt="Ícone de calendário" class="icon-date">
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Dados de Acesso -->
+      <fieldset class="grupo-campos">
+        <div class="grupoinput">
+          <label for="email">E-mail</label>
+          <div class="input-wrapper"> 
+            <input id="email" type="email" name="email" class="input-padrao" required>
+          </div>
+        </div>
+
+        <div class="grupoinput">
+          <label for="senha">Senha</label>
+          <div class="senha-wrapper">
+            <input id="senha" type="password" name="senha" class="input-padrao" required>
+            <button type="button" onclick="toggleSenha('senha', 'icone-senha')">
+              <img id="icone-senha" src="images/formulario/eye.svg" alt="Mostrar senha" width="24" height="24">
+            </button>
+          </div>
+        </div>
+      </fieldset>
+
+      <button type="submit">Criar Conta</button>
+    </form>
+
+    <section class="social-login" aria-labelledby="titulo-social-login">
+      <h2 id="titulo-social-login">Ou crie sua conta com:</h2>
+      <div class="icons_sociais">
+        <a href="#" class="loginicon"><img src="images/formulario/facebook.png" alt="Facebook"><p>Facebook</p></a>
+        <a href="#" class="loginicon"><img src="images/formulario/google.png" alt="Google"><p>Google</p></a>
+        <a href="#" class="loginicon"><img src="images/formulario/apple.png" alt="Apple"><p>Apple</p></a>
+        <a href="#" class="loginicon"><img src="images/formulario/steam.png" alt="Steam"><p>Steam</p></a>
+        <a href="#" class="loginicon"><img src="images/formulario/xbox.png" alt="Xbox"><p>Xbox</p></a>
+        <a href="#" class="loginicon"><img src="images/formulario/playstation.png" alt="Playstation"><p>Playstation</p></a>
+      </div>
+    </section>
+
+    <nav aria-label="Links úteis">
+      <ul class="linksdebaixo">
+        <li><a href="login.html" class="link">Já tem uma conta? Entrar</a></li>
+        <li><a href="#" class="link">Política de Privacidade</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Iara Games. Todos os direitos reservados.</p>
+  </footer>
+</main>
+
+<script>
+  function toggleSenha(inputId, iconId) {
+    const campo = document.getElementById(inputId);
+    const icone = document.getElementById(iconId);
+
+    const mostrando = campo.type === 'text';
+    campo.type = mostrando ? 'password' : 'text';
+    icone.src = mostrando 
+      ? 'images/formulario/eye.svg' 
+      : 'images/formulario/eye-slash.svg';
+    icone.alt = mostrando ? 'Mostrar senha' : 'Ocultar senha';
+  }
+</script>
+
+</body>
+</html>

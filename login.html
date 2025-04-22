@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrar - Iara Games</title>
+  <link rel="stylesheet" href="styles/login.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+</head>
+<body>
+
+
+  <main>
+    <a href="index.html" class="voltar-completo">
+      <i class="bi bi-arrow-left"></i>
+      <span>Voltar</span>
+    </a>
+
+    <header>
+      <img src="images/logo iara 5.png" alt="Iara Games" class="logo" />
+    </header>
+
+    <section class="formulario" aria-labelledby="titulo-login">
+      <h1 id="titulo-login">Entrar</h1>
+
+      <form action="#" method="post">
+        <fieldset class="dadosdeacesso">
+          <div class="grupo-campos">
+            <div class="grupoinput">
+              <label for="email">E-mail</label>
+              <input id="email" type="email" name="email" placeholder="Ex.: lorem@gmail.com" required />
+            </div>
+            <div class="grupoinput">
+              <label for="senha">Senha</label>
+              <div class="senha-wrapper">
+                <input id="senha" type="password" name="senha" required>
+                <button type="button" onclick="toggleSenha('senha', 'icone-senha')">
+                  <img id="icone-senha" src="images/formulario/eye.svg" alt="Mostrar senha" width="24" height="24">
+                </button>
+              </div>
+            </div>
+            
+
+            <a href="#">Esqueceu a senha?</a>
+
+            <button type="submit">Entrar</button>
+          </div>
+        </fieldset>
+
+        <section class="social-login" aria-labelledby="titulo-social-login">
+          <h2 id="titulo-social-login">Ou faça login com:</h2>
+          <div class="icons_sociais">
+            <a href="#" class="loginicon"><img src="images/formulario/facebook.png" alt="Facebook"><p>Facebook</p></a>
+            <a href="#" class="loginicon"><img src="images/formulario/google.png" alt="Google"><p>Google</p></a>
+            <a href="#" class="loginicon"><img src="images/formulario/apple.png" alt="Apple"><p>Apple</p></a>
+            <a href="#" class="loginicon"><img src="images/formulario/steam.png" alt="Steam"><p>Steam</p></a>
+            <a href="#" class="loginicon"><img src="images/formulario/xbox.png" alt="Xbox"><p>Xbox</p></a>
+            <a href="#" class="loginicon"><img src="images/formulario/playstation.png" alt="Playstation"><p>Playstation</p></a>
+          </div>
+        </section>
+      </form>
+
+      <nav aria-label="Links úteis">
+        <ul class="linksdebaixo">
+          <li><a href="cadastro.html" class="link">Criar Conta</a></li>
+          <li><a href="#" class="link">Política de Privacidade</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Iara Games. Todos os direitos reservados.</p>
+    </footer>
+  </main>
+
+  <script>
+    function toggleSenha(inputId, iconId) {
+      const campo = document.getElementById(inputId);
+      const icone = document.getElementById(iconId);
+  
+      const mostrando = campo.type === 'text';
+      campo.type = mostrando ? 'password' : 'text';
+      icone.src = mostrando 
+        ? 'images/formulario/eye.svg' 
+        : 'images/formulario/eye-slash.svg';
+      icone.alt = mostrando ? 'Mostrar senha' : 'Ocultar senha';
+    }
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Iara Games</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="shortcut icon" href="images/controller.svg" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="index.html" aria-label="Página inicial Iara Games">
+        <img src="images/Logo-Iara.png" alt="Logo Iara Games" class="logo-img">
+      </a>
+    </div>
+
+    <form class="campo-pesquisa" role="search" aria-label="Pesquisar jogos">
+      <input class="pesquisa" type="text" placeholder="Pesquisar" aria-label="Campo de pesquisa de jogos">
+      <button type="submit" class="botaoPesquisa">
+        <img src="images/search.svg" alt="Pesquisar">
+      </button>
+    </form>
+
+    
+
+    <div class="acoes-header">
+      <div class="grupo-botoes">
+        <a class="botao" href="#">
+          <div class="botao-conteudo">
+            <img src="images/collection.svg" alt="Ícone Biblioteca" class="icone-botao">
+            <span>BIBLIOTECA</span>
+          </div>
+        </a>
+        <a class="botao" href="#">
+          <div class="botao-conteudo">
+            <img src="images/shop.svg" alt="Ícone Loja" class="icone-botao">
+            <span>LOJA</span>
+          </div>
+        </a>
+      </div>
+  
+      <a class="botao-entrar" href="login.html">
+        <div class="botao-conteudo">
+          <img src="images/person-circle.svg" alt="Ícone Entrar" class="icone-botao">
+          <span>Entrar</span>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="destaques">
+      <h2>Jogos em Destaque</h2>
+      <div class="destaque-grid epic-style">
+        <div class="jogo-destaque">
+          <img id="imagem-destaque" src="images/horizon.jpg" alt="Jogo destaque" />
+          <div class="info-destaque">
+            <h3 id="nome-destaque">Horizon Chase Turbo</h3>
+            <p id="desc-destaque">Jogo de corrida arcade com inspiração nos clássicos dos anos 90.</p>
+            <p id="preco-destaque">R$ 49,90</p>
+            <button class="botaoComprar">Comprar</button>
+          </div>
+        </div>
+    
+        <div class="miniaturas">
+          <div class="miniatura ativa" onclick="selecionarJogo(0)">
+            <img src="images/horizon.jpg" alt="Horizon Chase Turbo">
+            <span>Horizon Chase Turbo</span>
+          </div>
+          <div class="miniatura" onclick="selecionarJogo(1)">
+            <img src="images/Dandara.jpg" alt="Dandara">
+            <span>Dandara</span>
+          </div>
+          <div class="miniatura" onclick="selecionarJogo(2)">
+            <img src="images/Fobia - St. Dinfna Hotel.jpg" alt="Fobia">
+            <span>Fobia</span>
+          </div>
+          <div class="miniatura" onclick="selecionarJogo(3)">
+            <img src="images/A Lenda do Heroi.avif" alt="A Lenda do Herói">
+            <span>A Lenda do Herói</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+
+    <section class="jogos-para-voce">
+      <h2>Jogos para você</h2>
+      <div class="carrosel-jogos">
+        <button class="seta seta-esquerda" aria-label="Anterior">←</button>
+        <div class="carrosel-container">
+          <div class="carrosel">
+          <img class="jogosCard" src="images/No Place for Bravery.avif" alt="No Place for Bravery">
+          <img class="jogosCard" src="images/enigma-do-medo.webp" alt="Enigma do Medo">
+          <img class="jogosCard" src="images/99Vidas - O Jogo.png" alt="99 Vidas">
+          <img class="jogosCard" src="images/blazing chrome.avif" alt="Blazing Chrome">
+          <img class="jogosCard" src="images/chroma squad.avif" alt="Chroma Squad">
+        </div>
+        </div>
+        <button class="seta seta-direita" aria-label="Próximo">→</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <ul class="footer-links">
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Termos de Uso</a></li>
+      <li><a href="#">Política de Privacidade</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook"><img src="images/facebook.svg" alt="Facebook"></a>
+      <a href="#" aria-label="Twitter"><img src="images/twitter.svg" alt="Twitter"></a>
+      <a href="#" aria-label="Instagram"><img src="images/instagram.svg" alt="Instagram"></a>
+    </div>
+  
+    <p class="footer-copy">&copy; 2025 Iara Games. Todos os direitos reservados.</p>
+  </footer>
+  
+
+  <script>
+    const jogos = [
+      {
+        nome: "Horizon Chase Turbo",
+        desc: "Jogo de corrida arcade com inspiração nos clássicos dos anos 90.",
+        preco: "R$ 19,99",
+        capa: "images/horizon.jpg"
+      },
+      {
+        nome: "Dandara",
+        desc: "Metroidvania com arte incrível e jogabilidade desafiadora.",
+        preco: "R$ 27,99",
+        capa: "images/Dandara.jpg"
+      },
+      {
+        nome: "Fobia - St. Dinfna Hotel",
+        desc: "Survival horror nacional com ambientação tensa e enredo misterioso.",
+        preco: "R$ 29,99",
+        capa: "images/Fobia - St. Dinfna Hotel.jpg"
+      },
+      {
+        nome: "A Lenda do Herói",
+        desc: "Narrado com música cantada, misturando aventura e comédia.",
+        preco: "R$ 34,99",
+        capa: "images/A Lenda do Heroi.avif"
+      }
+    ];
+    
+    let jogoAtual = 0;
+    let intervalo;
+    
+    function exibirJogo(index) {
+      const jogo = jogos[index];
+      document.getElementById("imagem-destaque").src = jogo.capa;
+      document.getElementById("nome-destaque").textContent = jogo.nome;
+      document.getElementById("desc-destaque").textContent = jogo.desc;
+      document.getElementById("preco-destaque").textContent = jogo.preco;
+    
+      document.querySelectorAll('.miniatura').forEach((mini, i) => {
+        mini.classList.toggle('ativa', i === index);
+      });
+    }
+    
+    function selecionarJogo(index) {
+      jogoAtual = index;
+      exibirJogo(index);
+      resetarIntervalo();
+    }
+    
+    function avancarJogo() {
+      jogoAtual = (jogoAtual + 1) % jogos.length;
+      exibirJogo(jogoAtual);
+    }
+    
+    function resetarIntervalo() {
+      clearInterval(intervalo);
+      intervalo = setInterval(avancarJogo, 5000);
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      exibirJogo(jogoAtual);
+      intervalo = setInterval(avancarJogo, 5000);
+    });
+    </script>
+ 
+
+ <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const carrossel = document.querySelector(".carrosel");
+    const cards = document.querySelectorAll(".jogosCard");
+    const btnEsquerda = document.querySelector(".seta-esquerda");
+    const btnDireita = document.querySelector(".seta-direita");
+
+    const visiveis = 3;
+    let scrollIndex = 0;
+
+    function rolarPara(index) {
+      const cardLargura = cards[0].offsetWidth + 20; // inclui o gap
+      const totalCards = cards.length;
+      const maxIndex = totalCards - visiveis;
+      const destino = Math.min(index * cardLargura, maxIndex * cardLargura);
+      carrossel.scrollTo({ left: destino, behavior: "smooth" });
+    }
+
+    btnDireita.addEventListener("click", () => {
+      scrollIndex++;
+      const maxIndex = cards.length - visiveis;
+      if (scrollIndex > maxIndex) scrollIndex = 0;
+      rolarPara(scrollIndex);
+    });
+
+    btnEsquerda.addEventListener("click", () => {
+      scrollIndex--;
+      const maxIndex = cards.length - visiveis;
+      if (scrollIndex < 0) scrollIndex = maxIndex;
+      rolarPara(scrollIndex);
+    });
+  });
+</script>
+
+  
+  
+</body>
+</html>

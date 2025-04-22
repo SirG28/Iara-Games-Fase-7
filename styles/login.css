@@ -1,0 +1,300 @@
+/* ========== VARIÁVEIS ========== */
+:root {
+    --branco: #FBF6E9;
+    --azul: #013A68;
+    --azul-escuro: #00182B;
+    --laranja: #D93E21;
+  }
+  
+  /* ========== RESET E BASE ========== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap');
+  
+  body {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: var(--branco);
+  }
+  
+  /* ========== CONTAINER PRINCIPAL ========== */
+  main {
+    background-color: var(--azul);
+    margin: 30px 0;
+    max-width: 450px;
+    width: 100%;
+    padding: 40px 32px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  
+  /* ========== VOLTAR + LOGO ========== */
+
+  .top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  } 
+
+  .voltar-completo {
+    align-self: flex-start;     
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  
+    font-size: 14px;
+    color: var(--branco);
+    text-decoration: none;
+  
+    background-color: transparent;
+    border: none;
+    padding: 5px 0;
+    margin-bottom: -24px;       
+    margin-top: -10px;        
+  }
+  
+  .voltar-completo i,
+  .voltar-completo span {
+    color: var(--branco);
+  }
+    
+  
+  .logo {
+    width: 220px;
+    margin: 0 auto 12px auto;
+    display: block;
+  }
+  
+  /* ========== TÍTULO ========== */
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  /* ========== FORMULÁRIO ========== */
+  .formulario {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  legend {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .grupo-campos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .grupoinput {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  label {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+  
+  input {
+    border-radius: 12px;
+    padding: 12px 44px 12px 12px; 
+    border: none;
+    background-color: #63828E;
+    color: var(--branco);
+    font-size: 14px;
+    width: 100%;
+    height: 48px;
+  }
+
+  input::placeholder {
+    color: transparent; 
+  }
+  
+  ::placeholder {
+    color: var(--branco);
+    font-size: 12px;
+  }
+  
+  /* ========== SENHA COM OLHO ========== */
+  .senha-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .senha-wrapper input {
+    width: 100%;
+    padding: 12px 44px 12px 12px; /* espaço para o botão do olho */
+    border-radius: 12px;
+    background-color: #63828E;
+    color: var(--branco);
+    font-size: 14px;
+    border: none;
+  }
+  
+  .senha-wrapper button {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .senha-wrapper img {
+    filter: brightness(0) invert(1); 
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* ========== BOTÃO ENTRAR ========== */
+  button[type="submit"] {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    margin-top: 12px;
+    margin-bottom: 24px;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #002540;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  
+  /* ========== ESQUECEU A SENHA ========== */
+  .grupo-campos a {
+    font-size: 12px;
+    color: var(--branco);
+    text-decoration: underline;
+    margin-top: 6px;
+  }
+  
+  /* ========== LOGIN SOCIAL ========== */
+  .social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  .social-login h2 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .icons_sociais {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    justify-items: center;
+  }
+  
+  .loginicon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--azul-escuro);
+    border-radius: 12px;
+    padding: 8px;
+    width: 90px;
+    height: 70px;
+    font-size: 11px;
+    color: var(--branco);
+    text-decoration: none;
+    gap: 4px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .loginicon:hover {
+    transform: scale(1.05);
+  }
+  
+  .loginicon img {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .loginicon p {
+    margin: 0;
+    font-size: 10px;
+    line-height: 1;
+  }
+  
+  /* ========== LINKS INFERIORES ========== */
+  .linksdebaixo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+  }
+  
+  .linksdebaixo li {
+    list-style: none;
+  }
+  
+  .link {
+    font-size: 12px;
+    color: var(--branco);
+    text-decoration: underline;
+  }
+  
+  /* ========== FOOTER ========== */
+  footer {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 24px;
+  }
+  
+  @media (max-width: 480px) {
+    main {
+      max-width: 90%;
+      padding: 32px 20px;
+    }
+  
+    .loginicon {
+      width: 80px;
+      height: 65px;
+    }
+  
+    .logo {
+      width: 160px;
+    }
+  }
+  

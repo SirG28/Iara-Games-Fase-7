@@ -1,0 +1,405 @@
+/* ----------- VARIÁVEIS E RESET ----------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --branco: #FBF6E9;
+    --azul: #013A68;
+    --azul-escuro: #00182B;
+    --gradiente-footer: linear-gradient(180deg, #034CA6 0%, #00182B 100%);
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    padding: 0;
+  }
+  
+  /* ----------- HEADER ----------- */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(to bottom, #FBF6E9 75%, rgba(0, 0, 0, 0));
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(4px); 
+  }
+  
+  .acoes-header {
+    display: flex;
+    align-items: center;
+    gap: 32px; 
+  }
+  
+  .logo img {
+    height: 90px;
+  }
+  
+  .campo-pesquisa {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    padding-left: 16px;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  
+  .pesquisa {
+    border: none;
+    padding: 15px;
+    outline: none;
+    font-size: 14px;
+    width: 600px;
+  }
+  
+  .botaoPesquisa {
+    background-color: transparent;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+  }
+  
+  .botaoPesquisa img {
+    height: 16px;
+    width: 16px;
+  }
+  
+  .nav-botoes {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    gap: 16px;
+  }
+
+  .grupo-botoes {
+    display: flex;
+    gap: 14px; 
+    margin-right: 50px;
+  }
+  
+  .botao {
+    background-color: rgba(0, 24, 43, 1);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 24px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .botao:hover {
+    background-color: #002b4d;
+  }
+  
+  .botao-entrar {
+    background-color: rgba(0, 24, 43, 1);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 30px;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 24px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .botao-entrar:hover {
+    background-color:rgb(0, 16, 29);
+  }
+
+  .icone-botao {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    vertical-align: middle;
+    filter: brightness(0) invert(1); 
+  }
+
+  .botao:hover .icone-botao,
+.botao-entrar:hover .icone-botao {
+  filter: brightness(0.8) invert(1); 
+}
+  
+
+  /* ----------- CONTEÚDO PRINCIPAL ----------- */
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-left: 100px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+  
+  .destaque-grid.epic-style {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 16px;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  
+  .jogo-destaque {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    width: 100%;
+    height: 600px; 
+    margin: 0 auto;
+    background-color: #000;
+  }
+  
+  
+  .jogo-destaque img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .info-destaque {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 24px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: #fff;
+    width: 100%;
+  }
+  
+  .info-destaque h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+ .info-destaque p {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+  
+.botaoComprar {
+    padding: 12px 20px;
+    background-color: rgba(251, 246, 233, 1);
+    color: #000;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+  }
+
+  .botaoComprar:hover {
+    background-color: #e6e6e6;
+  }
+
+.miniaturas {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin: 0 auto;
+}
+  
+.miniatura {
+    display: flex;
+    width: 100%;
+    height: 142px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #08263c;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .miniatura:hover,
+  .miniatura.ativa {
+    background-color: #014d7d;
+  }
+  
+  .miniatura img {
+    width: 200px; 
+    height: 100px;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+  
+  .miniatura span {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  
+  /* Carrossel */
+  .jogos-para-voce {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .carrosel-jogos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 30px;
+    gap: 20px;
+  }
+
+  .carrosel-container {
+    width: 100%;
+    flex-grow: 1;
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carrosel {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+    padding: 10px 0;
+  
+    /* Esconde barra de rolagem */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .carrosel::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .slide {
+    flex: 0 0 auto;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+
+  .jogosCard {
+    flex: 0 0 calc((100% - 40px) / 3);
+    max-width: calc((100% - 40px) / 3);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    height: auto;
+  }
+
+.seta {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+  
+  /* ----------- FOOTER ----------- */
+  .footer {
+    background: var(--gradiente-footer);
+    padding: 24px 20px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    margin-top: 40px;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    list-style: none;
+    margin-bottom: 16px;
+    padding: 0;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: #ccc;
+    text-decoration: underline;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .social-icons img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.2s ease;
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.1);
+  }
+  
+  .footer-copy {
+    font-size: 13px;
+    opacity: 0.8;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 600px) {
+    .footer-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .social-icons {
+      gap: 12px;
+    }
+  }
+  
+  
+  /* ----------- FONTES ----------- */
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+  

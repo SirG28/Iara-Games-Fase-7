@@ -1,0 +1,320 @@
+:root {
+    --branco: #FBF6E9;
+    --azul: #013A68;
+    --azul-escuro: #00182B;
+    --laranja: #D93E21;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color: var(--branco);
+    min-height: 100vh;
+  }
+  
+  main {
+    background-color: var(--azul);
+    margin: 50px 0;
+    max-width: 450px;
+    width: 100%;
+    padding: 24px 32px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  
+  /* VOLTAR + LOGO */
+  .top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .voltar-completo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--branco);
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    padding: 20px 0 0;
+  }
+  
+  .voltar-completo i,
+  .voltar-completo span {
+    color: var(--branco);
+  }
+  
+  .logo {
+    width: 220px;
+    margin: 0 auto 12px;
+    display: block;
+  }
+  
+  /* TÍTULO */
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  
+  /* FORMULÁRIO */
+  .formulario {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .grupoinput {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  
+  label {
+    font-size: 13px;
+    color: var(--branco);
+  }
+  
+  /* INPUT PADRÃO UNIFICADO */
+  .input-padrao,
+  .input-wrapper input,
+  .input-info-container input,
+  .input-date-container input,
+  .senha-wrapper input {
+    width: 100%;
+    height: 48px;
+    padding: 0 44px 0 12px;
+    background-color: #63828E;
+    border: none;
+    border-radius: 12px;
+    color: var(--branco);
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.2;
+    box-sizing: border-box;
+    display: block;
+  }
+  
+  .input-padrao::placeholder {
+    color: var(--branco);
+    opacity: 0.6;
+    font-size: 12px;
+  }
+  
+  /* WRAPPERS */
+  .input-wrapper,
+  .input-info-container,
+  .input-date-container,
+  .senha-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  /* ÍCONES E TOOLTIP */
+  .tooltip-wrapper,
+  .senha-wrapper button,
+  .icon-date {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .tooltip-wrapper {
+    cursor: pointer;
+  }
+  
+  .tooltip-text {
+    visibility: hidden;
+    width: 260px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    position: absolute;
+    top: -10px;
+    left: 120%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .tooltip-wrapper:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .info-icon,
+  .senha-wrapper img,
+  .icon-date {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+  }
+  
+  .senha-wrapper button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .input-date-container input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 12px;
+    width: 44px;
+    height: 100%;
+  }
+  
+  .input-date-container input[type="date"]::-moz-calendar-picker-indicator {
+    opacity: 0;
+  }
+  
+  /* BOTÃO DE ENVIO */
+  button[type="submit"] {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    margin: 16px 0 24px;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #002540;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  /* LOGIN SOCIAL */
+  .social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  .social-login h2 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .icons_sociais {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    justify-items: center;
+  }
+  
+  .loginicon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--azul-escuro);
+    border-radius: 12px;
+    padding: 8px;
+    width: 90px;
+    height: 70px;
+    font-size: 11px;
+    color: var(--branco);
+    text-decoration: none;
+    gap: 4px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .loginicon:hover {
+    transform: scale(1.05);
+  }
+  
+  .loginicon img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .loginicon p {
+    margin: 0;
+    font-size: 10px;
+    line-height: 1;
+  }
+  
+  /* LINKS E FOOTER */
+  .linksdebaixo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+  }
+  
+  .linksdebaixo li {
+    list-style: none;
+  }
+  
+  .link {
+    font-size: 12px;
+    color: var(--branco);
+    text-decoration: underline;
+  }
+  
+  footer {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 24px;
+  }
+  
+  /* RESPONSIVO */
+  @media (max-width: 480px) {
+    main {
+      padding: 32px 20px;
+    }
+  
+    .logo {
+      width: 180px;
+    }
+  
+    .loginicon {
+      width: 100%;
+    }
+  
+    .icons_sociais {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
