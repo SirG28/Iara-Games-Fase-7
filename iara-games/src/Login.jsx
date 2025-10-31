@@ -117,7 +117,7 @@ export default function Login() {
 
                 <nav aria-label="Links úteis">
                     <ul className="linksdebaixo">
-                        <li><a href="/public/portal/cadastro" className="link">Criar Conta</a></li>
+                        <li><a href="/cadastro" className="link">Criar Conta</a></li>
                         <li><a href="#" className="link">Política de Privacidade</a></li>
                     </ul>
                 </nav>
