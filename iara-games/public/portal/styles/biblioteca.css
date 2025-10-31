@@ -1,0 +1,407 @@
+/* Fontes utilizadas */
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Fundo escuro principal */
+  --bg: #00101A;
+  /* Cor principal do texto */
+  --text: #FFE7BA;
+  /* Botões e elementos de destaque */
+  --primary: #FF4D5F;
+  /* Segundário para pequenos accents */
+  --secondary: #0A0E0C;
+  /* Destaques e labels */
+  --highlight: #FFE7BA;
+  /* Dourado para botão "Tudo" */
+  --gold: #FFB800;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  padding-left: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(0, 9, 26, 0.8);
+  background: linear-gradient(to bottom, #00091A 75%, rgba(0, 9, 26, 0));
+  backdrop-filter: blur(4px);
+}
+
+.logo img {
+  height: 100px;
+}
+
+/* Reset e fonte */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Botão Loja (borda rosa) */
+.btn-Loja {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 8px 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Botão Perfil (fundo rosa) */
+.btn-Perfil {
+  background-color: var(--primary);
+  color: var(--bg);
+  border: none;
+  border-radius: 12px;
+  padding: 8px 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Botão Voltar */
+.btn-voltar {
+  color: var(--highlight);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.btn-voltar:hover {
+  text-decoration: underline;
+}
+
+.cart-icon {
+  color: var(--primary);
+}
+
+/* Títulos e textos */
+h2 {
+  font-family: 'Jomhuria', cursive;
+  font-size: 3rem;
+  color: var(--highlight);
+}
+
+.card-title {
+  font-size: 1rem;
+  z-index: 2;
+}
+
+/* Filtros ("tudo" e "favoritos") */
+.filtro-ativo,
+.favorito-ativo {
+  position: relative;
+  font-weight: bold;
+  background: none;
+  border: none;
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.filtro-ativo::after,
+.favorito-ativo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  border-radius: 20px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.filtro-ativo:hover::after,
+.favorito-ativo:hover::after {
+  transform: scaleX(1);
+}
+
+.filtro-ativo {
+  color: var(--gold);
+}
+
+.favorito {
+  color: red;
+}
+
+/* 1) Coração “vazio” (outline) sempre branco */
+.jogo-card .bi-heart {
+  color: white;
+}
+
+/* 2) Coração “cheio” (quando favoritado): preenchido em #FF4D5F,  
+      mas com contorno branco via text-shadow */
+.jogo-card .favorito {
+  color: #a70c1b;
+  /* esses três text-shadows “contornam” o ícone em branco */
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+/* 3) (Opcional) se quiser destacar ainda mais a aba “Favoritos” */
+.favorito-ativo {
+  color: #FF4D5F;
+}
+
+
+
+.custom-search {
+  max-width: 300px;
+  border: 1.5px solid var(--highlight);
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.custom-search .input-group-text {
+  background-color: transparent;
+  border: none;
+  color: var(--highlight);
+  padding-left: 16px;
+}
+
+.custom-search input {
+  background-color: transparent;
+  border: none;
+  color: var(--text);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.9rem;
+  padding-left: 5px;
+}
+
+.custom-search input::placeholder {
+  color: var(--highlight);
+  opacity: 0.8;
+}
+
+.custom-search .form-control:focus {
+  background-color: transparent !important;
+  border-color: var(--highlight) !important;
+  box-shadow: none;
+  outline: none;
+}
+
+.custom-search:focus-within .input-group-text,
+.custom-search:focus-within input {
+  color: var(--highlight);
+}
+
+.custom-search:focus-within input::placeholder {
+  color: var(--highlight);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.filtrar-btn {
+  color: var(--highlight);
+  background: transparent;
+  border: 1px solid var(--highlight);
+  border-radius: 25px;
+  padding: 0.25rem 1rem;
+}
+
+
+/* Cartões de jogos */
+.card-gradient {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  z-index: 1;
+}
+
+/* Deixa os cards com cantos mais arredondados */
+.jogo-card {
+  background-color: transparent;
+  border-radius: 16px;
+  overflow: hidden;
+  /* garante que nada “escorra” pelos cantos */
+}
+
+/* Se necessário, ajuste também a imagem para respeitar o raio */
+.jogo-card .card-img-top {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.bi-heart {
+  z-index: 2;
+  color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.bi-heart:hover {
+  transform: scale(1.2);
+}
+
+footer {
+  background-color: var(--secondary);
+  color: var(--highlight);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.875rem;
+}
+
+/* ----------- MENU INFERIOR ----------- */
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--secondary);
+  border-top: 1px solid var(--primary);
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+  z-index: 1000;
+}
+
+.bottom-nav-link {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.bottom-nav-link i {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.bottom-nav-link:hover,
+.bottom-nav-link.active {
+  color: var(--primary);
+}
+
+.bottom-nav {
+  display: none;
+}
+
+/* Responsividade */
+
+/* 1) Tablets e laptops pequenos (até 992px) */
+@media (max-width: 992px) {
+
+  /* Header vira coluna e espaça melhor */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  /* Bloco de filtros/busca/filtrar empilha e ocupa full-width */
+  .d-flex.flex-wrap.align-items-center.justify-content-between {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .d-flex.flex-wrap.align-items-center.justify-content-between>* {
+    width: 100%;
+  }
+
+  /* Busca e botão Filtrar ficam 100% */
+  .custom-search,
+  .dropdown {
+    width: 100%;
+    max-width: none;
+  }
+
+  .filtrar-btn {
+    justify-content: center;
+  }
+
+  /* Cards 2 por linha */
+  section.row>.col {
+    flex: 0 0 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
+  }
+}
+
+/* 2) Smartphones maiores (até 768px) */
+@media (max-width: 768px) {
+
+  /* Header: só logo centralizado */
+  header {
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  /* mantém a logo, esconde todo o resto */
+  header>*:not(.logo) {
+    display: none !important;
+  }
+
+  /* Abas Tudo/Favoritos escondidas (usamos só dropdown) */
+  .filtro-ativo,
+  .favorito-ativo {
+    display: none;
+  }
+
+  /* Busca e Filtrar ficam 100% */
+  .custom-search,
+  .dropdown {
+    width: 100%;
+  }
+
+  /* Cards 1 por linha */
+  section.row>.col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Mostra bottom-nav e afasta o footer */
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--secondary);
+    border-top: 1px solid var(--highlight);
+    justify-content: space-around;
+    padding: 0.5rem 0;
+    z-index: 1000;
+  }
+
+  footer {
+    margin-bottom: 4rem;
+  }
+}
+
+/* 3) Smartphones pequenos (até 576px) */
+@media (max-width: 576px) {
+
+  /* Logo menor */
+  .logo img {
+    height: 60px;
+  }
+
+  /* Busca fica mais compacta */
+  .custom-search {
+    border-radius: 20px;
+    padding: 0.3rem;
+  }
+
+  /* Se tiver links no footer, empilha-os */
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

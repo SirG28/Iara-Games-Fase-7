@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Quicksand:wght@400;500;600;700&display=swap');
+
+
+
+:root {
+  /* Fundo escuro principal */
+  --bg: #00101A;
+  /* Cor principal do texto */
+  --text: #FFE7BA;
+  /* Botões e elementos de destaque */
+  --primary: #FF4D5F;
+  /* Segundário para pequenos accents */
+  --secondary: #0A0E0C;
+  /* Destaques e labels */
+  --highlight: #FFE7BA;
+} 
+
+/* Reset geral e fontes base */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #00101A;
+  color: #FFE7BA;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho fixo e sem espaçamentos laterais */
+header {
+  width: 100vw;
+  background: linear-gradient(to bottom, #0A0E0C 75%, rgba(0, 0, 0, 0));
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  padding: 0; /* remove espaçamento vertical */
+  margin: 0;  /* remove espaçamento externo */
+}
+
+/* Logo */
+.logo img {
+  height: 100px;
+}
+
+.btn-voltar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 17px;
+  color: var(--color-light);
+  text-decoration: none;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.btn-voltar:hover {
+  color: var(--color-accent);
+}
+
+/* Botões com borda e texto personalizados */
+.btn-custom-outline {
+  padding: 0.3rem 1rem;
+  align-items: center;
+  display: inline-flex;
+  height: 40px;
+  border: 2px solid var(--primary);
+  border-radius: 15px;
+  background-color: transparent;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: 0.3s ease;
+}
+
+.btn-custom-outline:hover {
+  background-color: #FFE7BA;
+  color: #011F30;
+}
+
+/* Tipografia especial */
+h1, h2, .display-4, .display-5 {
+  font-family: 'Jomhuria', cursive;
+  color: #FFE7BA;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.titulo-secao {
+  font-family: 'Jomhuria', cursive;
+  font-size: 3rem;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  color: #FFE7BA;
+}
+
+p, .lead, .card-text {
+  font-family: 'Quicksand', sans-serif;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+/* Cartões */
+.card {
+  background-color: #011F30;
+  border: 2px solid var(--primary);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(178, 68, 30, 0.5);
+}
+
+.card-title {
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+/* Rodapé colado no fim */
+footer {
+  width: 100%;
+  background: linear-gradient(to top, #0A0E0C 90%, rgba(0, 0, 0, 0));
+  padding: 24px 0;
+  text-align: center;
+  color: #FFE7BA;
+  font-size: 14px;
+}
+
+main {
+  flex: 1;
+  padding-top: 2rem !important;  /* Aproxima do topo */
+  margin-top: -20px;             /* Ajusta espaço visual */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main section {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.bottom-nav {
+  display: none;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  .logo img {
+    height: 80px;
+  }
+
+  .btn-custom-outline {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

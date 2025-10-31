@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Fundo escuro principal */
+  --bg: #00101A;
+  /* Cor principal do texto */
+  --text: #FFE7BA;
+  /* Botões e elementos de destaque */
+  --primary: #FF4D5F;
+  /* Segundário para pequenos accents */
+  --secondary: #0A0E0C;
+  /* Destaques e labels */
+  --highlight: #FFE7BA;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color:var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Quicksand', sans-serif;
+  color: #FFE7BA;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+main {
+  background-color: #0A0E0C;
+  border: 2px solid #FFE7BA;
+  margin: auto;
+  max-width: 600px;
+  width: 100%;
+  padding: 40px 32px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+/* VOLTAR */
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.voltar-completo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 17px;
+  color: #FFE7BA;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 5px 0;
+}
+
+.voltar-completo i,
+.voltar-completo span {
+  color: #FFE7BA;
+}
+
+/* LOGO */
+.logo {
+  height: 80px;
+  margin: auto;
+  display: block;
+}
+
+/* TÍTULO */
+h1 {
+  font-family: 'Jomhuria', cursive;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  font-size: 50px;
+  color: #FFE7BA;
+  text-align: center;
+}
+
+/* FORMULÁRIO */
+.formulario {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: none;
+}
+
+.grupoinput {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-size: 15px;
+  color: #FFE7BA;
+}
+
+/* CAMPOS DE ENTRADA */
+.input-wrapper,
+.input-info-container,
+.input-date-container,
+.senha-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.input-padrao,
+.input-wrapper input,
+.input-info-container input,
+.input-date-container input,
+.senha-wrapper input {
+  width: 100%;
+  height: 48px;
+  padding: 0 44px 0 12px;
+  background-color: rgba(207, 79, 35, 0.2);
+  border: 1px solid #FFE7BA;
+  border-radius: 12px;
+  color: #FFE7BA;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.2;
+}
+
+.input-padrao::placeholder {
+  color: var(--branco);
+  opacity: 0.6;
+  font-size: 12px;
+}
+
+/* ÍCONES INTERNOS */
+.input-icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFE7BA;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 0;
+}
+
+/* TOOLTIP (ex: info-icon) */
+.tooltip-wrapper {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 260px;
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  position: absolute;
+  top: -10px;
+  left: 120%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip-wrapper:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* OCULTAR ÍCONE NATIVO DO CALENDÁRIO */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+input[type="date"]::-moz-calendar-picker-indicator {
+  opacity: 0;
+}
+
+/* TOOLTIP */
+.tooltip-text {
+  visibility: hidden;
+  width: 260px;
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  position: absolute;
+  top: -10px;
+  left: 120%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip-wrapper:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* BOTÃO DE ENVIO */
+button[type="submit"] {
+  background-color: var(--primary);
+  color: var(--secondary);
+  margin-top: 30px;
+  margin-bottom: 24px;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #fff4d0;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* ========== LOGIN SOCIAL ========== */
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+
+.social-login h2 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.icons_sociais {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  justify-items: center;
+}
+
+.loginicon {
+  display: flex;
+  flex-direction: row; /* Alinhar ícone e texto lado a lado */
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primary);
+  background-color: var(--secondary);
+  border-radius: 32px;
+  padding: 6px 12px;
+  min-width: 120px;
+  height: 40px;
+  font-size: 13px;
+  color: #FFE7BA;
+  text-decoration: none;
+  gap: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.loginicon:hover {
+  transform: scale(1.05);
+}
+
+.loginicon img {
+  width: 28px;
+  height: 28px;
+}
+
+.loginicon p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1;
+}
+
+/* ========== LINKS INFERIORES ========== */
+.linksdebaixo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1px;
+}
+
+.linksdebaixo li {
+  list-style: none;
+}
+
+.link {
+  font-size: 15px;
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  font-size: 10px;
+  color: #FFE7BA;
+  margin-top: 28px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 480px) {
+  main {
+    padding: 32px 20px;
+  }
+
+  .logo {
+    width: 180px;
+  }
+
+  .loginicon {
+    width: 100%;
+  }
+
+  .icons_sociais {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

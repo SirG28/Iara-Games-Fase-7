@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Biblioteca - Iara Games</title>
+
+   <!-- Bootstrap e Ícones -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+   <link rel="stylesheet" href="styles/biblioteca.css" />
+</head>
+
+<body>
+   <header class="d-flex justify-content-between align-items-center px-4 py-3">
+
+      <a href="index.html" class="d-flex align-items-center text-decoration-none">
+         <img src="/images/iara-logo-claro.png" alt="Logo Iara Games" style="height: 100px;" />
+      </a>
+
+      <!--Botões "Loja" e "Perfil"-->
+      <div class="d-flex align-items-center gap-3">
+         <button class="btn-Loja">LOJA</button>
+         <button class="btn-Perfil">
+            <i class="bi bi-person"></i>Perfil</button>
+         <i class="bi bi-cart fs-4" style="color: var(--primary);"></i>
+      </div>
+   </header>
+
+   <main class="container my-4">
+
+      <!-- Título e botão "Voltar" -->
+      <div class="d-flex justify-content-between align-items-center mb-3">
+         <h2>Biblioteca</h2>
+         <a href="index.html" class="btn-voltar d-flex align-items-center gap-1">
+            <i class="bi bi-chevron-left"></i> Voltar
+         </a>
+      </div>
+
+      <!-- Filtros, Busca e Ordenar -->
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+         <!-- Filtros -->
+         <div class="d-flex gap-4">
+            <button class="filtro-ativo">Tudo</button>
+            <button class="favorito-ativo">Favoritos</button>
+         </div>
+
+         <!-- Campo de busca -->
+         <div class="input-group custom-search">
+            <span class="input-group-text">
+               <i class="bi bi-search"></i>
+            </span>
+            <input type="text" class="form-control" placeholder="Buscar por Título" aria-label="Buscar por Título">
+         </div>
+
+         <!-- Filtrar: -->
+         <div class="dropdown">
+            <button class="btn filtrar-btn dropdown-toggle" type="button" id="filtrarDropdown" data-bs-toggle="dropdown"
+               aria-expanded="false">
+               Filtrar <i class="bi bi-funnel"></i>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="filtrarDropdown">
+               <!-- Mostrar -->
+               <li><a class="dropdown-item" href="#" data-action="show-all">Tudo</a></li>
+               <li><a class="dropdown-item" href="#" data-action="show-fav">Favoritos</a></li>
+               <li>
+                  <hr class="dropdown-divider">
+               </li>
+
+               <!-- Ordenar -->
+               <li><a class="dropdown-item" href="#" data-order="az">Título A→Z</a></li>
+               <li><a class="dropdown-item" href="#" data-order="za">Título Z→A</a></li>
+               <li>
+                  <hr class="dropdown-divider">
+               </li>
+
+               <!-- Gênero -->
+               <li><a class="dropdown-item" href="#" data-genre="beat-em-up">Beat ’em up</a></li>
+               <li><a class="dropdown-item" href="#" data-genre="action">Ação</a></li>
+               <li><a class="dropdown-item" href="#" data-genre="horror">Terror</a></li>
+               <li><a class="dropdown-item" href="#" data-genre="racing">Corrida</a></li>
+               <li><a class="dropdown-item" href="#" data-genre="platformer">Plataforma</a></li>
+               <li><a class="dropdown-item" href="#" data-genre="run-and-gun">Tiro e Corrida</a></li>
+               <li><a class="dropdown-item" href="#" data-genre="strategy">Estratégia</a></li>
+               <li><a class="dropdown-item" href="#" data-genre="action-rpg">Ação/RPG</a></li>
+
+               <li>
+                  <hr class="dropdown-divider">
+               </li>
+               <!-- Plataforma -->
+               <li><a class="dropdown-item" href="#" data-platform="pc">PC</a></li>
+               <li><a class="dropdown-item" href="#" data-platform="console">Console</a></li>
+               <!-- etc… -->
+
+               <li>
+                  <hr class="dropdown-divider">
+               </li>
+               <!-- Data -->
+               <li><a class="dropdown-item" href="#" data-added="new">Mais recentes</a></li>
+               <li><a class="dropdown-item" href="#" data-added="old">Mais antigas</a></li>
+            </ul>
+         </div>
+
+
+
+         <!-- Galeria de jogos -->
+         <section class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            <!-- Cartões de jogos -->
+            <div class="col">
+               <div class="card jogo-card text-white border-0 position-relative overflow-hidden" data-genre="beat-em-up"
+                  data-platform="console" data-added="2017-07-18">
+                  <img src="/images/99Vidas - O Jogo.png" class="card-img-top" alt="99Vidas">
+                  <div class="card-gradient position-absolute bottom-0 start-0 w-100 h-50"></div>
+                  <i class="bi bi-heart fs-5 position-absolute top-0 end-0 m-2"></i>
+                  <h5 class="position-absolute bottom-0 start-0 m-3 card-title">99Vidas</h5>
+               </div>
+            </div>
+            <!-- 99Vidas: Beat ’em up (Action/Indie) • Console • 18 Jul 2017 :contentReference[oaicite:0]{index=0} -->
+
+            <div class="col">
+               <div class="card jogo-card text-white border-0 position-relative overflow-hidden" data-genre="action"
+                  data-platform="console" data-added="2018-02-06">
+                  <img src="/images/Dandara.jpg" class="card-img-top" alt="Dandara">
+                  <div class="card-gradient position-absolute bottom-0 start-0 w-100 h-50"></div>
+                  <i class="bi bi-heart fs-5 position-absolute top-0 end-0 m-2"></i>
+                  <h5 class="position-absolute bottom-0 start-0 m-3 card-title">Dandara</h5>
+               </div>
+            </div>
+            <!-- Dandara: Action/Metroidvania • Console, Mobile, PC • 06 Fev 2018 :contentReference[oaicite:1]{index=1} -->
+
+            <div class="col">
+               <div class="card jogo-card text-white border-0 position-relative overflow-hidden" data-genre="horror"
+                  data-platform="pc" data-added="2024-11-28">
+                  <img src="/images/enigma-do-medo.webp" class="card-img-top" alt="Enigma do Medo">
+                  <div class="card-gradient position-absolute bottom-0 start-0 w-100 h-50"></div>
+                  <i class="bi bi-heart fs-5 position-absolute top-0 end-0 m-2"></i>
+                  <h5 class="position-absolute bottom-0 start-0 m-3 card-title">Enigma do Medo</h5>
+               </div>
+            </div>
+            <!-- Enigma do Medo: Horror • PC • 28 Nov 2024 :contentReference[oaicite:2]{index=2} -->
+
+            <div class="col">
+               <div class="card jogo-card text-white border-0 position-relative overflow-hidden" data-genre="horror"
+                  data-platform="pc" data-added="2022-06-28">
+                  <img src="/images/Fobia - St. Dinfna Hotel.jpg" class="card-img-top" alt="Fobia">
+                  <div class="card-gradient position-absolute bottom-0 start-0 w-100 h-50"></div>
+                  <i class="bi bi-heart fs-5 position-absolute top-0 end-0 m-2"></i>
+                  <h5 class="position-absolute bottom-0 start-0 m-3 card-title">Fobia</h5>
+               </div>
+            </div>
+            <!-- Fobia – St. Dinfna Hotel: Indie/Horror • PC, PS4, PS5, Xbox • 28 Jun 2022 :contentReference[oaicite:3]{index=3} -->
+
+            <div class="col">
+               <div class="card jogo-card text-white border-0 position-relative overflow-hidden" data-genre="racing"
+                  data-platform="console" data-added="2018-11-28">
+                  <img src="/images/horizon.jpg" class="card-img-top" alt="Horizon Chase">
+                  <div class="card-gradient position-absolute bottom-0 start-0 w-100 h-50"></div>
+                  <i class="bi bi-heart fs-5 position-absolute top-0 end-0 m-2"></i>
+                  <h5 class="position-absolute bottom-0 start-0 m-3 card-title">Horizon Chase</h5>
+               </div>
+            </div>
+            <!-- Horizon Chase Turbo: Racing • Multi-console/PC • 28 Nov 2018 :contentReference[oaicite:4]{index=4} -->
+
+            <div class="col">
+               <div class="card jogo-card text-white border-0 position-relative overflow-hidden" data-genre="platformer"
+                  data-platform="pc" data-added="2016-03-24">
+                  <img src="/images/A Lenda do Heroi.avif" class="card-img-top" alt="A Lenda do Herói">
+                  <div class="card-gradient position-absolute bottom-0 start-0 w-100 h-50"></div>
+                  <i class="bi bi-heart fs-5 position-absolute top-0 end-0 m-2"></i>
+                  <h5 class="position-absolute bottom-0 start-0 m-3 card-title">A Lenda do Herói</h5>
+               </div>
+            </div>
+            <!-- A Lenda do Herói: Platformer/Adventure • PC • Mar 2016 :contentReference[oaicite:5]{index=5} -->
+
+            <div class="col">
+               <div class="card jogo-card text-white border-0 position-relative overflow-hidden"
+                  data-genre="run-and-gun" data-platform="console" data-added="2019-07-11">
+                  <img src="/images/blazing chrome.avif" class="card-img-top" alt="Blazing Chrome">
+                  <div class="card-gradient position-absolute bottom-0 start-0 w-100 h-50"></div>
+                  <i class="bi bi-heart fs-5 position-absolute top-0 end-0 m-2"></i>
+                  <h5 class="position-absolute bottom-0 start-0 m-3 card-title">Blazing Chrome</h5>
+               </div>
+            </div>
+            <!-- Blazing Chrome: Action/Indie • Multi-console/PC • 11 Jul 2019 :contentReference[oaicite:6]{index=6} -->
+
+            <div class="col">
+               <div class="card jogo-card text-white border-0 position-relative overflow-hidden" data-genre="strategy"
+                  data-platform="console" data-added="2015-04-30">
+                  <img src="/images/chroma squad.avif" class="card-img-top" alt="Chroma Squad">
+                  <div class="card-gradient position-absolute bottom-0 start-0 w-100 h-50"></div>
+                  <i class="bi bi-heart fs-5 position-absolute top-0 end-0 m-2"></i>
+                  <h5 class="position-absolute bottom-0 start-0 m-3 card-title">Chroma Squad</h5>
+               </div>
+            </div>
+            <!-- Chroma Squad: Indie/RPG/Strategy • Multi-console/PC • 30 Abr 2015 :contentReference[oaicite:7]{index=7} -->
+
+            <div class="col">
+               <div class="card jogo-card text-white border-0 position-relative overflow-hidden" data-genre="action-rpg"
+                  data-platform="pc" data-added="2022-09-22">
+                  <img src="/images/No Place for Bravery.avif" class="card-img-top" alt="No Place for Bravery">
+                  <div class="card-gradient position-absolute bottom-0 start-0 w-100 h-50"></div>
+                  <i class="bi bi-heart fs-5 position-absolute top-0 end-0 m-2"></i>
+                  <h5 class="position-absolute bottom-0 start-0 m-3 card-title">No Place for Bravery</h5>
+               </div>
+            </div>
+            <!-- No Place for Bravery: Action/Adventure/RPG • PC, Switch • 22 Set 2022 :contentReference[oaicite:8]{index=8} -->
+
+         </section> <!--Fechamento da galeria-->
+
+
+   </main>
+   <!-- Bootstrap Bundle (inclui Popper) -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+   <script src="js/biblioteca.js"></script>
+
+   </main>
+
+   <footer>
+      <p>&copy; 2025 Iara Games. Todos os direitos reservados.</p>
+   </footer>
+
+   <nav class="bottom-nav">
+      <a href="index.html" class="bottom-nav-link"><i class="bi bi-house"></i><span>Página Inicial</span></a>
+      <a href="loja.html" class="bottom-nav-link"><i class="bi bi-shop"></i><span>Loja</span></a>
+      <a href="biblioteca.html" class="bottom-nav-link"><i class="bi bi-collection"></i><span>Biblioteca</span></a>
+      <a href="carrinho.html" class="bottom-nav-link"><i class="bi bi-cart"></i><span>Carrinho</span></a>
+      <a href="login.html" class="bottom-nav-link"><i class="bi bi-person"></i><span>Entrar</span></a>
+
+   </nav>
+
+</body>
+
+</html>

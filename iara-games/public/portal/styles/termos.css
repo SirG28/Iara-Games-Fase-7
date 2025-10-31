@@ -1,0 +1,130 @@
+:root {
+    /* Fundo escuro principal */
+    --bg: #00101A;
+    /* Cor principal do texto */
+    --text: #FFE7BA;
+    /* Botões e elementos de destaque */
+    --primary: #FF4D5F;
+    /* Secundário para leves contrastes */
+    --secondary: #0A0E0C;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    background: linear-gradient(to bottom,
+            var(--secondary) 75%,
+            rgba(0, 0, 0, 0) 100%);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+    padding: 1rem 0;
+}
+
+/* Botões do header */
+.btn-custom-outline {
+    padding: 0.3rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+    border: 2px solid var(--primary);
+    border-radius: 15px;
+    background-color: transparent;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-custom-outline:hover {
+    background-color: var(--text);
+    color: var(--bg);
+}
+
+/* >>> ÚNICA definição de “Voltar” <<< */
+.btn-voltar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 17px;
+    color: var(--color-light);
+    text-decoration: none;
+    margin-bottom: 15px;
+    margin-left: 280px;
+    transition: color 0.3s ease;
+}
+
+.btn-voltar:hover {
+    color: var(--color-accent);
+}
+
+
+/* Container que envolve só os termos */
+.container {
+    border: 2px solid var(--primary);
+    border-radius: 15px;
+    padding: 1rem;
+    background-color: var(--secondary);
+    margin-bottom: 2rem;
+}
+
+/* Fonte Jomhuria no título */
+.jomhuria {
+    font-family: 'Jomhuria', cursive;
+}
+
+/* Subtítulos e texto */
+.subtitle {
+    color: var(--primary);
+    margin: 2rem 0 0.5rem;
+}
+
+.text-section {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #fff;
+}
+
+/* Rodapé */
+.footer {
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(to top,
+            var(--secondary) 90%,
+            transparent 100%);
+    padding: 1.5rem 0;
+    font-size: 0.875rem;
+    color: var(--text);
+}
+
+/* Links genéricos */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+/* Main ocupa espaço restante para empurrar o footer ao fim */
+main {
+    flex: 1;
+}

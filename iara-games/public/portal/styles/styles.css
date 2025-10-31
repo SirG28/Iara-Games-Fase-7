@@ -1,0 +1,700 @@
+/* ----------- FONTES ----------- */
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Quicksand:wght@400;500;600;700&display=swap');
+
+/* ----------- VARIÁVEIS E RESET ----------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Fundo escuro principal */
+  --bg: #00101A;
+  /* Cor principal do texto */
+  --text: #FFE7BA;
+  /* Botões e elementos de destaque */
+  --primary: #FF4D5F;
+  /* Segundário para pequenos accents */
+  --secondary: #0A0E0C;
+  /* Destaques e labels */
+  --highlight: #FFE7BA;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* ----------- HEADER ----------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(0, 9, 26, 0.8);
+  background: linear-gradient(to bottom, #00091A 75%, rgba(0, 9, 26, 0));
+  backdrop-filter: blur(4px);
+}
+
+.logo img {
+  height: 100px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-left: 150px;
+  border: 2px solid var(--highlight);
+  border-radius: 15px;
+  padding: 0.4rem 1rem;
+  width: 100%;
+  max-width: 500px;
+  height: 45px;
+  background: transparent;
+  color: var(--highlight);
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--highlight);
+  font-size: 1rem;
+}
+
+.search-bar input::placeholder {
+  color: var(--highlight);
+  opacity: 0.7;
+}
+
+.search-bar i,
+.search-bar button {
+  font-size: 1.2rem;
+  color: var(--highlight);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.acoes-header {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-custom-outline {
+  padding: 0.3rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  border: 2px solid var(--primary);
+  border-radius: 15px;
+  background: transparent;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  transition: background .3s ease, color .3s ease;
+}
+
+.btn-custom-outline:hover {
+  background: var(--primary);
+  color: var(--bg);
+}
+
+.btn-custom-solid {
+  padding: 0.3rem 1rem;
+  height: 40px;
+  border-radius: 15px;
+  gap: 0.5rem;
+  background: var(--primary);
+  color: var(--bg);
+  text-decoration: none;
+  margin-left: 50px;
+  margin-right: 30px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.85rem;
+  transition: background .3s ease, color .3s ease;
+}
+
+.btn-custom-solid:hover {
+  background: #db051b;
+  color: var(--secondary);
+}
+
+.btn-cart {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 25px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* ----------- CONTEÚDO PRINCIPAL ----------- */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Jomhuria', cursive;
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+.destaques h2 {
+  font-size: 60px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1;
+  color: var(--highlight);
+  margin-left: 100px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.info-destaque h3 {
+  font-family: 'Quicksand', cursive;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1;
+  color: #fff;
+}
+
+.destaque-grid.epic-style {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  margin: 24px 100px 0;
+}
+
+.jogo-destaque {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--highlight);
+  background-color: #000;
+  box-shadow: 0 0 10px rgba(255, 231, 186, 0.2);
+  width: 100%;
+  height: 600px;
+}
+
+.jogo-destaque img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.info-destaque {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 80%);
+  color: #fff;
+}
+
+.info-destaque h3 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.info-destaque p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.botaoComprar {
+  padding: 12px 20px;
+  background-color: var(--primary);
+  color: #000;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.botaoComprar:hover {
+  background-color: #50191f;
+}
+
+
+.miniaturas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.miniatura {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid var(--highlight);
+  background: transparent;
+  cursor: pointer;
+  transition: background .3s ease;
+}
+
+.miniatura:hover,
+.miniatura.ativa {
+  background-color: var(--secondary);
+}
+
+.miniatura img {
+  width: 200px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.miniatura span {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* Carrossel "Jogos para você" */
+.jogos-para-voce {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.jogos-para-voce h2 {
+  font-size: 60px;
+  letter-spacing: 2px;
+  color: var(--highlight);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  margin-left: 60px;
+  padding: 10px 40px;
+}
+
+.jogos-para-voce-wrapper {
+  background: #0A0E0C;
+  padding: 20px 0;
+  border-radius: 28px;
+}
+
+.carrosel-jogos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 70px;
+  gap: 20px;
+}
+
+.carrosel-container {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.carrosel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carrosel::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  flex: 0 0 auto;
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.jogosCard {
+  flex: 0 0 calc((100% - 40px) / 3);
+  max-width: calc((100% - 40px) / 3);
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.seta {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--highlight);
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* FOOTER */
+.footer {
+  background: linear-gradient(to top, var(--secondary) 90%, rgba(0, 0, 0, 0));
+  padding: 24px 20px;
+  text-align: center;
+  color: var(--highlight);
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.footer-links a {
+  color: var(--highlight);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color .3s;
+}
+
+.footer-links a:hover {
+  color: #ccc;
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.social-icons img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  transition: transform .2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+.footer-copy {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* ----------- MENU INFERIOR ----------- */
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--secondary);
+  border-top: 1px solid var(--primary);
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+  z-index: 1000;
+}
+
+.bottom-nav-link {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.bottom-nav-link i {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.bottom-nav-link:hover,
+.bottom-nav-link.active {
+  color: var(--primary);
+}
+
+.bottom-nav {
+  display: none;
+}
+
+/* ------------------------------ */
+/* RESPONSIVIDADE SIMPLIFICADA    */
+/* ------------------------------ */
+
+/* 1) Tablets e laptops pequenos (até 992px) */
+@media (max-width: 992px) {
+
+  /* Destaque principal vira coluna */
+  .destaque-grid.epic-style {
+    flex-direction: column;
+    margin: 0 16px;
+    gap: 16px;
+  }
+
+  .jogo-destaque,
+  .jogo-destaque img {
+    height: auto;
+  }
+
+  /* Miniaturas em scroll */
+  .miniaturas {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    padding: 0 16px;
+    margin: 16px 0;
+  }
+
+  .miniatura {
+    flex: 0 0 180px;
+  }
+
+  /* Ajustes no carrossel “Jogos para você” */
+  .jogos-para-voce-wrapper {
+    padding: 24px 16px;
+  }
+
+  .carrosel {
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  /* Dois cards por linha */
+  .jogosCard {
+    flex: 0 0 calc(50% - 12px);
+    max-width: calc(50% - 12px);
+  }
+
+  /* Mostra setas de navegação */
+  .seta {
+    display: block;
+  }
+
+  /* Títulos menores */
+  .destaques h2,
+  .jogos-para-voce h2 {
+    font-size: 3rem;
+  }
+}
+
+/* 2) Smartphones maiores (até 768px) */
+@media (max-width: 768px) {
+
+  .bottom-nav {
+    display: flex;
+  }
+
+  /* Header: só logo + hambúrguer */
+  header {
+    padding: 1rem;
+    justify-content: center;
+  }
+
+    header>*:not(.logo) {
+      display: none !important;
+    }
+
+  .search-bar,
+  .acoes-header {
+    display: none !important;
+  }
+
+
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    background: var(--bg);
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+  }
+
+    .destaques .seta,
+    .destaques .seta-esquerda,
+    .destaques .seta-direita {
+      display: none !important;
+    }
+
+  .menu-toggle.active+.mobile-menu {
+    display: flex;
+  }
+
+  /* Destaque principal e texto */
+  .destaques h2,
+  .jogos-para-voce h2 {
+    font-size: 2.4rem;
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .destaques .destaque-grid.epic-style,
+  .destaques .jogo-destaque {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+
+  .destaques .jogo-destaque {
+  height: auto;
+  }
+
+  .destaques .jogo-destaque img {
+    width: 100%;
+    height: auto;
+  }
+
+  .destaque-grid.epic-style {
+    flex-direction: column;
+    margin: 0 16px;
+    gap: 16px;
+  }
+
+  .jogo-destaque {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Info-destaque em bloco */
+  .info-destaque {
+    position: static;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 16px;
+  }
+
+  /* Oculta miniaturas */
+  .miniaturas {
+    display: none !important;
+  }
+
+  /* Paginação por dots */
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 1rem 0;
+  }
+
+  .carousel-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: background .3s;
+  }
+
+  .carousel-dots .dot.active {
+    background: var(--highlight);
+  }
+
+  /* Carrossel full-width */
+  .carrosel {
+    gap: 10px;
+    padding: 0 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  /* Um card por linha */
+  .jogosCard {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Posiciona setas sobre o carrossel */
+  .seta {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .seta-esquerda {
+    left: 0.5rem;
+  }
+
+  .seta-direita {
+    right: 0.5rem;
+  }
+}
+
+/* 3) Smartphones pequenos (até 576px) */
+@media (max-width: 576px) {
+
+  /* Logo menor e toggle menor */
+  .logo img {
+    height: 60px;
+  }
+
+  /* Títulos ainda menores */
+  .destaques h2,
+  .jogos-para-voce h2 {
+    font-size: 1.6rem;
+    margin: 12px 0;
+  }
+
+  /* Botão Comprar mais compacto */
+  .botaoComprar {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  /* Cards ocupam 85% da largura */
+  .jogosCard {
+    flex: 0 0 85%;
+    max-width: 85%;
+  }
+
+  /* Links do footer empilhados */
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

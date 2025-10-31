@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Iara Games</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="shortcut icon" href="/images/controller.svg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jomhuria&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="index.html" aria-label="Página inicial Iara Games">
+        <img src="/images/iara-logo-claro.png" alt="Logo Iara Games" class="logo-img">
+      </a>
+    </div>
+
+
+
+    <form class="search-bar">
+      <i class="bi bi-list"></i>
+      <input type="text" placeholder="Pesquisar" aria-label="Pesquisar">
+      <button type="submit"><i class="bi bi-search"></i></button>
+    </form>
+
+    <div class="acoes-header d-flex align-items-center flex-wrap">
+      <a href="#" class="btn-custom-outline">LOJA</a>
+      <a href="biblioteca.html" class="btn-custom-outline">BIBLIOTECA</a>
+    </div>
+
+
+    <div>
+      <a href="login.html" class="btn-custom-solid">
+        <i class="bi bi-person"></i> Entrar
+      </a>
+    </div>
+
+    <button class="btn-cart">
+      <i class="bi bi-cart"></i>
+    </button>
+
+  </header>
+
+  <main>
+    <section class="destaques">
+      <h2>Jogos em Destaque</h2>
+      <div class="destaque-grid epic-style">
+        <div class="jogo-destaque">
+          <img id="imagem-destaque" src="/images/horizon.jpg" alt="Jogo destaque" />
+          <div class="carousel-dots" aria-hidden="true"></div>
+          <div class="info-destaque">
+            <h3 id="nome-destaque">Horizon Chase Turbo</h3>
+            <p id="desc-destaque">Jogo de corrida arcade com inspiração nos clássicos dos anos 90.</p>
+            <p id="preco-destaque">R$ 49,90</p>
+            <button class="botaoComprar">Comprar</button>
+          </div>
+        </div>
+
+        <div class="miniaturas">
+          <div class="miniatura ativa" onclick="selecionarJogo(0)">
+            <img src="/images/horizon.jpg" alt="Horizon Chase Turbo">
+            <span>Horizon Chase Turbo</span>
+          </div>
+          <div class="miniatura" onclick="selecionarJogo(1)">
+            <img src="/images/Dandara.jpg" alt="Dandara">
+            <span>Dandara</span>
+          </div>
+          <div class="miniatura" onclick="selecionarJogo(2)">
+            <img src="/images/Fobia - St. Dinfna Hotel.jpg" alt="Fobia">
+            <span>Fobia</span>
+          </div>
+          <div class="miniatura" onclick="selecionarJogo(3)">
+            <img src="/images/A Lenda do Heroi.avif" alt="A Lenda do Herói">
+            <span>A Lenda do Herói</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section class="jogos-para-voce-wrapper">
+      <div class="jogos-para-voce">
+        <h2>Jogos para você</h2>
+        <div class="carrosel-jogos">
+          <div class="carrosel-jogos">
+            <button class="seta seta-esquerda">
+              <i class="bi bi-chevron-left fs-3"></i>
+            </button>
+            <div class="carrosel-container">
+              <div class="carrosel">
+                <img class="jogosCard" src="/images/No Place for Bravery.avif" alt="No Place for Bravery">
+                <img class="jogosCard" src="/images/enigma-do-medo.webp" alt="Enigma do Medo">
+                <img class="jogosCard" src="/images/99Vidas - O Jogo.png" alt="99 Vidas">
+                <img class="jogosCard" src="/images/blazing chrome.avif" alt="Blazing Chrome">
+                <img class="jogosCard" src="/images/chroma squad.avif" alt="Chroma Squad">
+              </div>
+            </div>
+            <button class="seta seta-direita">
+              <i class="bi bi-chevron-right fs-3"></i>
+            </button>
+          </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <ul class="footer-links">
+      <li><a href="sobre.html">Sobre Nós</a></li>
+      <li><a href="termos.html">Termos de Serviço</a></li>
+      <li><a href="#">Política de Privacidade</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook"><img src="/images/facebook.svg" alt="Facebook"></a>
+      <a href="#" aria-label="Twitter"><img src="/images/twitter.svg" alt="Twitter"></a>
+      <a href="#" aria-label="Instagram"><img src="/images/instagram.svg" alt="Instagram"></a>
+    </div>
+
+    <p class="footer-copy">&copy; 2025 Iara Games. Todos os direitos reservados.</p>
+  </footer>
+
+  <nav class="bottom-nav">
+    <a href="index.html" class="bottom-nav-link"><i class="bi bi-house"></i><span>Página Inicial</span></a>
+    <a href="loja.html" class="bottom-nav-link"><i class="bi bi-shop"></i><span>Loja</span></a>
+    <a href="biblioteca.html" class="bottom-nav-link"><i class="bi bi-collection"></i><span>Biblioteca</span></a>
+    <a href="carrinho.html" class="bottom-nav-link"><i class="bi bi-cart"></i><span>Carrinho</span></a>
+    <a href="login.html" class="bottom-nav-link"><i class="bi bi-person"></i><span>Entrar</span></a>
+
+
+  </nav>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js" defer></script>
+
+  <!-- Começo do script para alterar o nome do botão para o nome do usuário logado, ainda não conseguimos resolver -->
+  <!-- <script>
+    (function () {
+      function atualizarBotaoLogin() {
+        const linkEl = document.getElementById('btn-login');
+        if (!linkEl) { console.warn('btn-login não encontrado'); return; }
+
+        const span = linkEl.querySelector('span') || linkEl;
+        const token = localStorage.getItem('token');
+        const userName = localStorage.getItem('userName');
+
+        console.log('[login-btn] token:', token, 'userName:', userName); // debug
+
+        if (token && userName) {
+          // exibe só a parte antes do @ (se for e-mail)
+          const curto = userName.includes('@') ? userName.split('@')[0] : userName.split(' ')[0] || userName;
+          span.textContent = curto;
+          // se quiser mandar para "minha conta" quando logado:
+          // linkEl.href = 'minha-conta.html';
+        } else {
+          span.textContent = 'Entrar';
+          linkEl.href = 'login.html';
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', atualizarBotaoLogin);
+      } else {
+        atualizarBotaoLogin();
+      }
+    })();
+  </script> -->
+
+
+
+
+
+</body>
+
+</html>
