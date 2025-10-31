@@ -22,7 +22,7 @@ export default function Login() {
                 body: JSON.stringify({ email, password: senha }),
             });
             const data = await res.json();
-            if (!res.ok) throw new Error(data?.error || "Falha ao fazer login");
+            if (!res.ok) throw new Error("Usuário ou senha incorretos. Tente novamente.");
 
             // sucesso
             localStorage.setItem("token", data.token);
